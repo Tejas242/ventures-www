@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Button from './ui/Button';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -100,12 +101,12 @@ export default function Navbar() {
             variants={logoVariants}
             transition={{ duration: 0.3 }}
           >
-            <Link 
-              href="/" 
-              className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-blue-400"
-            >
-              Ventures
-            </Link>
+            <Image 
+            src="/logo.png"
+            alt="Ventures"
+            width={60}
+            height={10}
+            />
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -201,13 +202,12 @@ export default function Navbar() {
               <div className="flex flex-col h-full">
                 {/* Header with close button */}
                 <div className="flex justify-between items-center py-5 px-4 border-b border-zinc-800">
-                  <Link 
-                    href="/" 
-                    className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-blue-400"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Ventures
-                  </Link>
+                <Image 
+            src="/logo.png"
+            alt="Ventures"
+            width={40}
+            height={10}
+            />
                   <motion.button
                     onClick={() => setIsMenuOpen(false)}
                     className="p-2 rounded-md hover:bg-zinc-800 transition-colors"
